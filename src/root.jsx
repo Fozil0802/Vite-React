@@ -8,25 +8,33 @@ class Root extends Component {
       count: 0,
     };
   }
-  onChangeText() {
-    // title = event.target.value
-    this.setState({title: event.target.value, count:1})
-    console.log("this", this);
-    // console.log("event", event.target.value);
-    // console.log("title", title);
-    console.log("======");
-  }
+  // onChangeText() {
+  //   // title = event.target.value
+  //   this.setState({title: event.target.value, count:1})
+  //   console.log("this", this);
+  //   // console.log("event", event.target.value);
+  //   // console.log("title", title);
+  //   console.log("======");
+  // }
   render() {
     function clickHello(event) {
       console.log("Hello World", event);
     }
-
+ function onChangeText(event) {
+    // title = event.target.value
+    // this.setState({title: event.target.value, count:1})
+    // console.log("this", this);
+    // console.log("event", event.target.value);
+    // console.log("title", title);
+    console.log("typing...", event);
+    console.log("======");
+  }
     
     return (
       <div>
-        <h1 onClick={clickHello}>Hello Webbrain {this.state.title}</h1>
-        <button onClick={() => clickHello("Webbrain")}>click me</button>
-        <input onChange={(event) => this.onChangeText(event)} type="text" />
+        <h1 onClick={clickHello}>Hello Webbrain</h1>
+        <button onClick={clickHello}>click me</button>
+        <input onChange={onChangeText} type="text" />
         <select name="" id="">
           <option value="Uz">Uzbek</option>
           <option value="Eng">English</option>
